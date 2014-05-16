@@ -50,10 +50,10 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-exec');
 
-        //grab enyo source for building
+
         try {
             // Query the entry
-            stats = fs.lstatSync(enyo);
+            var files = fs.readdirSync(enyo);
         } catch (e) {
             grunt.task.run('gitclone:enyoClone');
         }
