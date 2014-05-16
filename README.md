@@ -13,6 +13,22 @@ register the tasks to your grunt file
 
     grunt.loadNpmTasks('grunt-enyo-builder');
 
+set the tag for the version of enyo to build against
+
+    grunt.initConfig({
+        "enyo-builder": {
+            "production": {
+                options: {
+                    tag: "2.4.0"
+                }
+            },
+        },
+    });
+
+add the task to an existing grunt task if you choose
+
+    grunt.registerTask('default', 'enyo-builder');
+
 run the build process in the top level of your source.
 
     grunt enyo-builder

@@ -15,23 +15,29 @@ module.exports = function (grunt) {
     var modulepath = path.resolve('node_modules/grunt-enyo-builder');
     var enyo = modulepath + '/enyo';
 
-    grunt.registerTask('enyo-builder', 'build an enyo component easily', function () {
+    grunt.registerMultiTask('enyo-builder', 'build an enyo component easily', function () {
+
+        var options = this.options({
+            tag: '2.4.0',
+        });
+
+        console.log(options);
 
         var buildCmd = grunt.template.process('nodejs <%= deploypath %> -T -e <%= enyo %> -s <%= dir %> -o <%= dir %>/dist', {
-                data: {
-                    deploypath: enyo + '/tools/deploy.js',
-                    dir: process.cwd(),
-                    enyo: enyo,
-                    modulepath: modulepath
-                }
-            });
+            data: {
+                deploypath: enyo + '/tools/deploy.js',
+                dir: process.cwd(),
+                enyo: enyo,
+                modulepath: modulepath
+            }
+        });
 
         grunt.config.set('gitclone.enyoClone', {
-                options: {
-                    repository: 'https://github.com/enyojs/enyo.git',
-                    branch: '2.4.1-pre',
-                    directory: enyo
-                }
+            options: {
+                repository: 'https://github.com/enyojs/enyo.git',
+                branch: options.tag,
+                directory: enyo
+            }
         });
 
         grunt.config.set('exec.enyoClone', {
@@ -48,8 +54,7 @@ module.exports = function (grunt) {
         try {
             // Query the entry
             stats = fs.lstatSync(enyo);
-        }
-        catch (e) {
+        } catch (e) {
             grunt.task.run('gitclone:enyoClone');
         }
 
