@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         grunt.config.set('gitclone.enyoClone', {
                 options: {
                     repository: 'https://github.com/enyojs/enyo.git',
-                    branch: 'master',
+                    branch: '2.4.1-pre',
                     directory: enyo
                 }
         });
