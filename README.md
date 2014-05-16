@@ -32,6 +32,10 @@ wish list
 * multiple enyo version support
 * centralized enyo management
 
+shortcomings
+
+* doesn't work with $libs
+
 why I made this
 
 had a need for a fluid way to build enyo components. We utilize enyo to build a vast assortment of silo'd components, it's nice to have a grunt task to include with other dev tasks.
