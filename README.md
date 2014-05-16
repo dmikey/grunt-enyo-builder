@@ -34,7 +34,12 @@ wish list
 
 shortcomings
 
-* doesn't work with $libs
+* doesn't work/haven't tested with $libs
+* stores enyo in node_modules localized location
+
+how it works
+
+clones the enyo core repo to node_modules (todo: add tag support), uses core deploy.js to manage a build. Produces files in dist.
 
 why I made this
 
