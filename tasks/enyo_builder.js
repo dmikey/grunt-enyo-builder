@@ -45,17 +45,18 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-exec');
 
         //grab enyo source for building
-        fs.exists(enyo, function(exists) {
-          if (!exists) {
+        try {
+            // Query the entry
+            stats = fs.lstatSync(enyo);
+        }
+        catch (e) {
             grunt.task.run('gitclone:enyoClone');
-          }
-        });
+        }
 
         grunt.task.run('exec:enyoClone');
-
         grunt.task.run('clean');
-
         grunt.verbose.ok();
+
     });
 
 };
