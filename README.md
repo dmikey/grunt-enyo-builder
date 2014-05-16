@@ -21,6 +21,9 @@ run the build process in the top level of your source.
 requirements
 
 * deploy.json in top level of source
+* grunt-git
+* grunt-contrib-clean
+* grunt-exec
 
 wish list
 

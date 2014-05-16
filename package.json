@@ -1,8 +1,8 @@
 {
   "name": "grunt-enyo-builder",
   "description": "build an enyo component easily",
-  "version": "0.1.1",
-  "homepage": "https://github.com/derek/grunt-enyo-builder",
+  "version": "0.1.2",
+  "homepage": "https://github.com/toxigenicpoem/grunt-enyo-builder",
   "author": {
     "name": "Derek M. Anderson",
     "email": "toxigenicpoem@gmail.com"
