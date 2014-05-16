@@ -15,7 +15,7 @@ register the tasks to your grunt file
 
 run the build process in the top level of your source.
 
-    grunt enyo_builder
+    grunt enyo-builder
 
 
 requirements

@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     var modulepath = path.resolve('node_modules/grunt-enyo-builder');
     var enyo = modulepath + '/enyo';
 
-    grunt.registerTask('enyo_builder', 'build an enyo component easily', function () {
+    grunt.registerTask('enyo-builder', 'build an enyo component easily', function () {
 
         var buildCmd = grunt.template.process('nodejs <%= deploypath %> -T -e <%= enyo %> -s <%= dir %> -o <%= dir %>/dist', {
                 data: {
