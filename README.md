@@ -35,4 +35,4 @@ had a need for a fluid way to build enyo components. We utilize enyo to build a 
 
 what you do not get
 
-there is no template, or boiler plate here. this plug in assumes you are comfortable with scafolding your own application, or are using another scafold.
+there is no template, or boiler plate here. this plug in assumes you are comfortable with scaffolding your own application, or are using another scaffold.
