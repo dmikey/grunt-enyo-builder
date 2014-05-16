@@ -15,6 +15,10 @@ module.exports = function (grunt) {
     var modulepath = path.resolve('node_modules/grunt-enyo-builder');
     var enyo = modulepath + '/enyo';
 
+    grunt.loadNpmTasks('grunt-git');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-exec');
+
     grunt.registerMultiTask('enyo-builder', 'build an enyo component easily', function () {
 
         var options = this.options({
@@ -44,12 +48,7 @@ module.exports = function (grunt) {
             cmd: buildCmd
         });
 
-        grunt.config.set('clean.enyo', ['build']);
-
-        grunt.loadNpmTasks('grunt-git');
-        grunt.loadNpmTasks('grunt-contrib-clean');
-        grunt.loadNpmTasks('grunt-exec');
-
+        grunt.config.set('clean.enyoBuild', ['build']);
 
         try {
             // Query the entry
@@ -59,7 +58,7 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run('exec:enyoClone');
-        grunt.task.run('clean');
+        grunt.task.run('clean:enyoBuild');
         grunt.verbose.ok();
 
     });
