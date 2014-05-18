@@ -23,16 +23,18 @@ module.exports = function (grunt) {
 
         var options = this.options({
             tag: '2.4.0',
+            lib: path.resolve('lib'),
         });
 
         console.log(options);
 
-        var buildCmd = grunt.template.process('nodejs <%= deploypath %> -T -e <%= enyo %> -s <%= dir %> -o <%= dir %>/dist', {
+        var buildCmd = grunt.template.process('nodejs <%= deploypath %> -T -e <%= enyo %> -s <%= dir %> -o <%= dir %>/dist -l <%= lib %>', {
             data: {
                 deploypath: enyo + '/tools/deploy.js',
                 dir: process.cwd(),
                 enyo: enyo,
-                modulepath: modulepath
+                modulepath: modulepath,
+                lib: options.lib
             }
         });
 
