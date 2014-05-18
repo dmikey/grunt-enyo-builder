@@ -50,7 +50,6 @@ wish list
 
 shortcomings
 
-* doesn't work/haven't tested with $libs
 * stores enyo in node_modules localized location
 
 how it works

@@ -21,6 +21,7 @@ module.exports = function (grunt) {
 
     grunt.registerMultiTask('enyo-builder', 'build an enyo component easily', function () {
 
+
         var options = this.options({
             tag: '2.4.0',
             lib: path.resolve('lib'),
