@@ -1,9 +1,11 @@
 grunt-enyo-builder
 ==================
 
-simplified enyo build process. bring a local version of enyo with your project, locking in for build.
+Download and link the enyo and optional onyx and layout libraries in your project structure.
+This allows your project source code to be shipped without these libraries.
 
-build the required enyo version and your application in one swoop.
+Build enyo in the required version, libraries and your app in one go.
+
 
 install
 
@@ -24,10 +26,22 @@ set the tag for the version of enyo to build against
             },
         },
     });
+    
+create a setup task to download the libraries so you can run debug.
+
+    grunt.registerTask('setup',['enyo-clone','onyx-clone','layout-clone']);
 
 add the task to an existing grunt task if you choose
 
     grunt.registerTask('default', 'enyo-builder');
+
+setup your enyo environment
+
+    grunt setup
+    
+or download the libraries manualy
+
+    grunt clone-enyo / grunt clone-onyx / grunt clone-layout
 
 run the build process in the top level of your source.
 
@@ -40,6 +54,7 @@ requirements
 * grunt-git
 * grunt-contrib-clean
 * grunt-exec
+* grunt-contrib-symlink
 
 wish list
 
@@ -50,7 +65,7 @@ wish list
 
 shortcomings
 
-* stores enyo in node_modules localized location
+* stores enyo in node_modules localized location, solved by symlinking
 
 how it works
 
