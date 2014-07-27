@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
 					});
 
-	grunt.registerTask('enyo-clone', 'clone enyo', function() {
+	grunt.registerMultiTask('enyo-clone', 'clone enyo', function() {
 
 		var options = this.options({
 			tag : '2.4.0',
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
 		grunt.verbose.ok();
 	});
 	
-	grunt.registerTask('layout-clone', 'clone layout', function() {
+	grunt.registerMultiTask('layout-clone', 'clone layout', function() {
 
 		var options = this.options({
 			tag : '2.4.0',
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 		grunt.verbose.ok();
 	});
 	
-	grunt.registerTask('onyx-clone', 'clone onyx', function() {
+	grunt.registerMultiTask('onyx-clone', 'clone onyx', function() {
 
 		var options = this.options({
 			tag : '2.4.0',
