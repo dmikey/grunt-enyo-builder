@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 							lib : path.resolve('lib'),
 						});
 
-						console.log(options);
+						//console.log(options);
 						var buildCmd = grunt.template
 								.process(
 										'nodejs <%= deploypath %> -T -e <%= enyo %> -s <%= dir %> -o <%= dir %>/dist -l <%= lib %>',
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			lib : path.resolve('lib'),
 		});
 
-		console.log(options);
+		//console.log(options);
 
 		grunt.config.set('gitclone.enyoClone', {
 			options : {
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 			lib : path.resolve('lib'),
 		});
 
-		console.log(options);
+		//console.log(options);
 
 		grunt.config.set('gitclone.layoutClone', {
 			options : {
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 			grunt.task.run('gitclone:layoutClone');
 			
 		}
-		console.log('gitclone.layoutClone');
+		//console.log('gitclone.layoutClone');
 		grunt.task.run('symlink:layoutLink');
 		
 		grunt.verbose.ok();
@@ -146,7 +146,7 @@ module.exports = function(grunt) {
 			lib : path.resolve('lib'),
 		});
 
-		console.log(options);
+		//console.log(options);
 
 		grunt.config.set('gitclone.onyxClone', {
 			options : {
@@ -174,7 +174,7 @@ module.exports = function(grunt) {
 			grunt.task.run('gitclone:onyxClone');
 			
 		}
-		console.log('gitclone.onyxClone');
+		//console.log('gitclone.onyxClone');
 		grunt.task.run('symlink:onyxLink');
 		
 		grunt.verbose.ok();
